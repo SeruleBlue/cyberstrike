@@ -1,0 +1,308 @@
+-- Stats
+-----------------------------------------------------------------------------------------------------------------------
+[ATK] Attack		How much physical damage is dealt.
+[DEF] Defense		How much received physical damage is reduced by.
+[MAG] Magic			How much magical damage is dealt.
+[MGR] Magic Resist	How much received magical damage is reduced by.
+[ACC] Accuracy		Chance to hit.
+[EVA] Evasion		Chance to dodge; compared against opponent's ACC.
+[SPD] Speed			How fast the ATB gauge fills.
+[OVR] Overclock		Rate at which Overclock gauge charges.
+[AGG] Aggro			How much aggro is generated from performing moves.^
+[LUK] Luck			Chance of critically striking.
+
+
+-- Statistics Calculations
+-----------------------------------------------------------------------------------------------------------------------
+[HP]
+			LOW        AVG        HIG
+	Lv.1	200    /   350    /   500
+	Lv.9	500    /   750    /   999
+	+Per	 37.5  /    50.0  /    62.375
+
+[ATK/DEF/MAG/MGR]
+			LOW         AVG       HIG
+	Lv.1	  9     /   15     /   20
+	Lv.9	 33     /   50     /   67
+	+Per	  3.00  /    4.375 /   5.875
+
+[BAS]
+Base power of a move.
+	LOW AV  HI   OHKO       OHKA
+	5   15  30    40         75
+ 
+[DMG]
+Damage Calculation.
+
+	DMG = BAS * (4.0 + LVL) * (ATK/DEF)
+ 
+ 
+-- Party Members
+-----------------------------------------------------------------------------------------------------------------------
+
+
+> Barra		W.Mage
+-----------------------------------------------------------------------------------------------------------------------
+Healer and supporter, but fragile.
+-----------------------------------------------------------------------------------------------------------------------
+P - [Optimism]					Immune to debuffs affecting the ATB bar.
+W - [Cure/a/ga]					Restores [?/?/?]% of a target's HP.
+A - [Checkpoint]				Casts [Regen] on a target and removes a random debuff if any are present.
+D - [OP APM]					Raises party's SPD by [?/?/?].
+S - [1UP]						Fully restores party's HP and removes all debuffs.
+								Delpetes 4 OC segments.
+
+		Lv.1  per/Lv.	Lv.9
+ [HP]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[FIR] x1.00
+[ATK]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[ICE] x1.25
+[DEF]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[LIG] x1.25
+[MAG]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[WAT] x1.00
+[MGR]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[ACC]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[EVA]	???						[|||||     ]	 [|||||     ]
+[SPD]	???						[|||||     ]	 [|||||     ]
+[OVR]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[AGG]
+[LUK]
+
+
+> Chiharu	B.Mage				Water
+-----------------------------------------------------------------------------------------------------------------------
+Moderately-powered Water/Ice magic supplemented with slowing debuffs; greatly counters Fire.
+-----------------------------------------------------------------------------------------------------------------------
+P - [???]						Permanenly has [NulBlaze].
+W - [Aqua Code]					Fires an orb of congealed blue code at a single target, dealing Water damage.
+A - [Cryo Shot]					Fires a salvo of frozen light blue code blocks at a single target, dealing Ice damage
+								and applying [DDoS] [25/30/45]% of the time.
+D - [Coolant Barrier]			Increases party's MGR by [?/?/?] and removes Fire-based debuffs.
+S - [Frozen Codec]				Shoots a giant blast of icy code at all enemies, dealing Ice and Water damage to each
+								with a [15/25/35]% chance to apply [Halt], and if that fails, a [40/50/65]% chance
+								to apply [DDoS].
+
+		Lv.1  per/Lv.	Lv.9
+ [HP]	250 + 53.125/L	(675)			[FIR] x0.00
+[ATK]	  5 +  1.875/L	(20)			[ICE] x0.75
+[DEF]	 13 +  3.125/L	(38)			[LIG] x1.75
+[MAG]	 20 +  4.625/L	(57)			[WAT] x0.25
+[MGR]	 17 +  5.625/L	(62)
+[ACC]
+[EVA]
+[SPD]
+[OVR]
+[AGG]
+[LUK]
+
++ [MAG][MGR][LUK]
+* [EVA][SPD][ACC][DEF][OVR]
+- [ATK][AGG][HP]
+
+> Kazan		Tank
+-----------------------------------------------------------------------------------------------------------------------
+Very high HP, defenses, and taunting ability, but little offensive capability.
+-----------------------------------------------------------------------------------------------------------------------
+P - [???]						Receives +0.5% base DEF and MGR per 1.0% missing max HP.
+W - [???]						Single target taunt+damage - Relatively short CD
+A - [Snack Time]				Eats a sammich - Weak self heal + cleanse
+D - [Meat Shield]				Temporarily receives all damage dealt to a target ally - Relatively long CD
+S - [Gluttony]					Shows excess greed/eating in battle that makes him take reduced damage and infuriates
+								all enemies - Temporary % damage reduction and AoE taunt
+								Depletes 1 OC segment.
+
+		Lv.1  per/Lv.	Lv.9
+ [HP]	475 + 62.500/L	(975)			[FIR] x1.00
+[ATK]	 12 +  4.125/L	(45)			[ICE] x1.00
+[DEF]	 20 +  5.625/L	(65)			[LIG] x1.00
+[MAG]	  9 +  3.125/L	(34)			[WAT] x1.00
+[MGR]	 18 +  5.250/L	(60)
+[ACC]
+[EVA]
+[SPD]
+[OVR]
+[AGG]
+[LUK]
+
+
+> Jason		B.Mage, Support 	Squishy		"SHSL Technomage"
+-----------------------------------------------------------------------------------------------------------------------
+Squishy support Technomancer.
+-----------------------------------------------------------------------------------------------------------------------
+P - [???]						???
+W - [Tactical Analysis]			Studies the workings of one foe, revealing its weaknesses and reducing
+								its DEF and MGR by -[1.0/2.0/3.5]. (Casts [Scan]).
+A - [Decon-Recon]				Deals damage to a foe. A portion of the damage ([x/x/x]) is converted
+								to healing for the whole party.
+D - [???]						???
+S - [Infinity Drive]			Gathers junk data and fires it out at a single target.
+
+
+> Raav		Fighter, Heavy
+-----------------------------------------------------------------------------------------------------------------------
+Slow but powerful heavy-hitter.
+-----------------------------------------------------------------------------------------------------------------------
+P - [Snark]						???
+W - [Omniwrench]				Thwacks a target with his Omniwrench, dealing [?/?/?] base Physical damage.
+A - [Sideswipe]					Attacks a target with his electric-activated Omniwrench, dealing [?/?/?] base Physical
+								damage + 2 x SPDself/SPDtgt, and [?/?/?] base Electric damage.
+D - [Guard]						Adopts a defensive stance for 5.0s, granting [Firewall] for the duration
+								or until Physically hit.
+S - [Cobaltric Calamity]		Charges for 2.0s, then deals a heavy [?/?/?] base Physical damage to a single target,
+								also inflicting one of [Backdoor], [Encryption], [Lag], or [Static].
+
+
+		Lv.1  per/Lv.	Lv.9
+ [HP]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[FIR] x1.00
+[ATK]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[ICE] x1.25
+[DEF]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[LIG] x0.75
+[MAG]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[WAT] x1.00
+[MGR]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[ACC]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[EVA]	???						[|||||     ]	 [|||||     ]
+[SPD]	???						[|||||     ]	 [|||||     ]
+[OVR]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[AGG]
+[LUK]
+
+
+> Rue		Rogue, Melee, DPS
+-----------------------------------------------------------------------------------------------------------------------
+Speedy with immense amount of low-damage strikes, but fragile.
+-----------------------------------------------------------------------------------------------------------------------
+P - [Counter]					Evading an attack instantly fills Rue's ATB bar.
+W - [Double Slash]				Quickly strikes a target twice for [?/?/?] base Physical damage each.
+A - [Air Cutter]				Performs an upward strike, dealing [?/?/?] base Physical damage with a move bonus
+								of [?/?/?] ACC.
+D - [Undercut]					Quickly strikes a target's weak point, dealing [?/?/?] base Physical damage and
+								reducing DEF by [?/?/?].
+S - [???]						Quickly strikes all targets [?/?/?] times, each doing [?/?/?] base Physical damage,
+								and raises EVA by [?/?/?] for 3 seconds, the duration of the ability.
+								Depletes 1 OC segment.
+
+		Lv.1  per/Lv.	Lv.9
+ [HP]								[FIR] x1.00
+[ATK]	  							[ICE] x1.00
+[DEF]								[LIG] x1.00
+[MAG]								[WAT] x1.00
+[MGR]	 
+[ACC]
+[EVA]
+[SPD]
+[OVR]
+[AGG]
+[LUK]
+
+
+> Serule	B.Mage				Electric	"Electromancer"
+-----------------------------------------------------------------------------------------------------------------------
+Focused on pure Electric damage. Strong magic, weak physical.
+-----------------------------------------------------------------------------------------------------------------------
+P - [Blulectromage]				???
+W - [Thunder/a/ga]				Deals [13/16/19] base Electric damage to a single target.
+ BASE	Lv.1	Lv.2	Lv.3
+[PBA]	  0		  0		  0
+[MBA]	 13		 17		 21
+[ATB]	  5		  5		  5
+A - [Plasma Arc]				Deals [?/?/?] base Electric damage to multiple targets, with lower damage
+								the further away a target is from the origin.
+ BASE	Lv.1	Lv.2	Lv.3
+[PBA]	  0		  0		  0
+[MBA]	  ?		  ?		  ?
+[ATB]	  ?		  ?		  ?
+		TGT		 +1		 +2
+[DIS]	100%	 80%	 60%
+D - [NulShock++]				Casts [NulShock] on party, and raises party's MGR by +[1.0/2.0/3.5].
+ BASE	Lv.1	Lv.2	Lv.3
+[MGR]	 1.0	 2.0	 3.5
+S - [Blulectric Barrage]		Conjures an amplifying magic sigil over 1.0s, then releases a
+								focused beam of energy through it, dealing Electric AoE damage,
+								with lower damage the further away a target is from the origin.
+								Depletes 1 OC segment.
+ BASE	Lv.1	Lv.2	Lv.3
+[PBA]	  0		  0		  0
+[MBA]	 18		 22		 28
+[ATB]	  ?		  ?		  ?
+		TGT		 +1		 +2
+[DIS]	100%	 80%	 60%
+
+		Lv.1  per/Lv.	Lv.9   At Lv.1 vs AVG	At Lv.9 vs AVG
+ [HP]	325 + 55.000/L	(765)	[||||      ]	 [|||||     ]		[FIR] x1.00
+[ATK]	  7 +  1.875/L	(22)	[|         ]	 [|         ]		[ICE] x1.33
+[DEF]	 10 +  3.750/L	(40)	[|         ]	 [||        ]		[LIG] x0.25
+[MAG]	 18 +  5.750/L	(64)	[||||||||  ]	 [||||||||| ]		[WAT] x1.00
+[MGR]	 17 +  5.375/L	(60)	[|||||||   ]	 [||||||||  ]
+[ACC]	 21						[||||||||  ]	 [||||||||  ]
+[EVA]	 12						[|||       ]	 [|||       ]
+[SPD]	  5 +  0.125/L	 (6)	[|||||     ]	 [|||||     ]
+[OVR]	100 +  6.250/L	(120)	[|||||     ]	 [|||||     ]
+[AGG]
+[LUK]
+
+
+> Zaff		Support, Debuffer
+-----------------------------------------------------------------------------------------------------------------------
+No direct attack, but powerful debuffing abilities.
+-----------------------------------------------------------------------------------------------------------------------
+P - [???]						???
+W - [Immobilize]				Fear causes the target's ATB gauge to temporarily stop charging.
+								(Casts [Halt] on target.)
+A - [Illusion]					Generates an image of himself, halving the chance to be hit on the next attack.
+								(Casts [Illusion] on self.)
+D - [Trick Box]					The opponents attack will be pushed back to hit the opponent or its team.
+								(Casts [Firewall] on target.)
+S - [Fear]						All targets become surrounded by shadows for [?/?/?], slowly draining HP.
+								(Casts [Memory Leak] on target.)
+
+
+> Template		Class
+-----------------------------------------------------------------------------------------------------------------------
+Description
+-----------------------------------------------------------------------------------------------------------------------
+P - [???]						???
+W - [???]						???
+A - [???]						???
+D - [???]						???
+S - [???]						???
+
+		Lv.1  per/Lv.	Lv.9
+ [HP]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[FIR] x1.00
+[ATK]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[ICE] x1.00
+[DEF]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[LIG] x1.00
+[MAG]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]		[WAT] x1.00
+[MGR]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[ACC]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[EVA]	???						[|||||     ]	 [|||||     ]
+[SPD]	???						[|||||     ]	 [|||||     ]
+[OVR]	??? + ??.???/L	(???)	[|||||     ]	 [|||||     ]
+[AGG]
+[LUK]
+
+
+-- Buffs
+-----------------------------------------------------------------------------------------------------------------------
+[Armored]			Cuts incoming ATK of enemies by 50.0%.
+[Encryption]		Reduces magical effects (damage, healing) by 50%.
+[Firewall]			Physical effects directed at this target are applied to a random member of the original caster's party.
+[Illusion]			One attack on this target has a 50.0% chance to be negated; if this occurs, the buff ends.
+[NulBlaze]			Negates a single Fire-based attack.
+[NulFrost]			Negates a single Ice-based attack.
+[NulShock]			Negates a single Electric-based attack.
+[NulTide]			Negates a single Water-based attack.
+[Overclock]			ATB gauge charges 100.0% faster.
+[Overspeed]			ATB gauge charges 50.0% faster.
+[Partition]			Reduces physical damage by 50.0%.
+[Reflect]			Magic effects directed at this target are applied to a random member of the original caster's party.
+[Regen]				Recover HP at a rate such that 100.0% is restored after xx.xs.
+
+-- Debuffs
+-----------------------------------------------------------------------------------------------------------------------
+[Backdoor]			Reduces DEF by 25.0%.
+[Decryption]		Reduces MGR by 25.0%.
+[Halt]				ATB gauge stops charging for xx.xs.
+[Lag]				Reduces EVA by 50.0%.
+[Memory Leak]		Lose HP at a rate such that 100.0% is restored after xx.xs.
+[Scan]*				Stats and elemental weaknesses are displayed.
+[DDoS]				ATB gauge charges 50.0% slower.
+[Static]			Reduces ACC by 50.0%.
+[Taunt]				Forced to attack the source of this debuff.		
+
+* Does not affect PCs.
+^ Does not affect NPCs.

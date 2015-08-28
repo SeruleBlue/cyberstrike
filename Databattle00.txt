@@ -1,0 +1,63 @@
+<< Nash >> Setting up Databattle. I observe it will be a 1 vs 1.
+<< Nash >> Waiting to start... (60)
+<< Nash >> Waiting to start... (45)
+<< Nash >> Waiting to start... (30)
+<< Nash >> Waiting to start... (15)
+<< Serule >> Updated stats
+		LVL: 1	ATB: 5
+		 HP: 325/325
+		ATK: 7	DEF: 10
+		MAG: 18	MGR: 17
+		ACC: 21	EVA: 12
+		SPD: 5	OVR: 100
+		AGG: 0	LUK: 0
+<< Blurus Mk.I >> Updated stats
+		LVL: 1	ATB: 9
+		 HP: 500/500
+		ATK: 15	DEF: 17
+		MAG: 9	MGR: 10
+		ACC: 15	EVA: 15
+		SPD: 5	OVR: 0
+		AGG: 0	LUK: 0
+
+<< Nash >> Beginning Databattle.
+<< Serule >> Casting Thunder!
+<< Serule >> Firing Thunder now!
+<< Thunder >> Affecting self: Serule and target: Blurus Mk.I.
+<< Blurus Mk.I >> Took 117 damage from Serule's Thunder!
+<< Serule >> Now waiting for ATB to charge.
+<< Blurus Mk.I >> Casting Blurus Arc I!
+<< Blurus Mk.I >> Firing Blurus Arc I now!
+<< Blurus Arc I >> Affecting self: Blurus Mk.I and target: Serule.
+<< Serule >> Took 75 damage from Blurus Mk.I's Blurus Arc I!
+<< Serule >> Casting Thunder!
+<< Blurus Mk.I >> Now waiting for ATB to charge.
+<< Serule >> Firing Thunder now!
+<< Thunder >> Affecting self: Serule and target: Blurus Mk.I.
+<< Blurus Mk.I >> Took 117 damage from Serule's Thunder!
+<< Serule >> Now waiting for ATB to charge.
+<< Serule >> Casting Thunder!
+<< Serule >> Firing Thunder now!
+<< Thunder >> Affecting self: Serule and target: Blurus Mk.I.
+<< Blurus Mk.I >> Took 117 damage from Serule's Thunder!
+<< Serule >> Now waiting for ATB to charge.
+<< Blurus Mk.I >> Casting Blurus Arc I!
+<< Blurus Mk.I >> Firing Blurus Arc I now!
+<< Blurus Arc I >> Affecting self: Blurus Mk.I and target: Serule.
+<< Serule >> Took 75 damage from Blurus Mk.I's Blurus Arc I!
+<< Blurus Mk.I >> Now waiting for ATB to charge.
+<< Serule >> Casting Thunder!
+<< Serule >> Firing Thunder now!
+<< Thunder >> Affecting self: Serule and target: Blurus Mk.I.
+<< Blurus Mk.I >> Took 117 damage from Serule's Thunder!
+<< Serule >> Now waiting for ATB to charge.
+<< Blurus Mk.I >> Casting Blurus Arc I!
+<< Serule >> Casting Thunder!
+<< Blurus Mk.I >> Firing Blurus Arc I now!
+<< Blurus Arc I >> Affecting self: Blurus Mk.I and target: Serule.
+<< Serule >> Took 75 damage from Blurus Mk.I's Blurus Arc I!
+<< Serule >> Firing Thunder now!
+<< Thunder >> Affecting self: Serule and target: Blurus Mk.I.
+<< Blurus Mk.I >> Took 117 damage from Serule's Thunder!
+<< Blurus Mk.I >> HP reduced to 0!
+<< Nash >> All NPC's have been defeated!

@@ -1,0 +1,21 @@
+CYBERSTRIKE - Changelog
+
++Addition	~Change/Fix	!Bug	^Solved Bug	   xThrown out
+-Subtraction	#Other action	@TODO	$Completed TODO	   &Size Report
+
+04-18-14     [v0.01]
+--------------------
++ Added targeting
++ Added elemental affinities
++ So many other things aaaa
++ Added damage popups
++ Added Overclock
+@ Redo visual effects (mirror)
+
+04-17-14     [v0.00]
+--------------------
++ UI Mockup
++ Basic battle stats, formulas
++ Basic battle engine
++ Basic UI elements
++ Working demo battle
